@@ -24,9 +24,9 @@
            
             <section class="flex justify-between">
                 <nav class="flex space-x-6 items-center text-gray-400 font-medium">
-                    <a href="#" class="align-middle hover:text-gray-700 dark:hover:text-white">TV Series</a>
-                    <a href="#" class="text-gray-700 dark:text-white font-semibold">Movies</a>
-                    <a href="#" class="hover:text-gray-700 dark:hover:text-white ">Animes</a>
+                    <a href="/" class="align-middle hover:text-gray-700 dark:hover:text-white">TV Series</a>
+                    <a href="/" class="text-gray-700 dark:text-white font-semibold">Movies</a>
+                    <a href="/" class="hover:text-gray-700 dark:hover:text-white ">Animes</a>
                 </nav>
                 <div class="hidden md:block w-1/2">
                     <SearchBar />
