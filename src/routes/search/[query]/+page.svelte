@@ -11,7 +11,7 @@
 </script>
 
 <div>
-	<h1 class="mb-4 text-2xl font-bold">Search Results for "{page.params.query}"</h1>
+	<h1 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Search Results for <span class="font-bold text-primary">"{page.params.query}"</span></h1>
 	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4" data-sveltekit-preload-data="tap">
 		{#each data.results as result (result.item.id)}
 			<SearchCard url={`/${result.type}/${result.item.id}`} name={result.item.name} poster={result.item.poster} />

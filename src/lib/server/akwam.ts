@@ -1,9 +1,11 @@
-import { AKWAM_BASE_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import type { DirectSource, Movie, SearchItem } from '$lib/models';
 import { error } from '@sveltejs/kit';
 import type { Fetch } from './source';
 import type Source from './source';
 import * as cheerio from 'cheerio';
+
+const AKWAM_BASE_URL = env.AKWAM_BASE_URL;
 
 const movieCache: Map<string, Movie> = new Map();
 const searchCache: Map<string, SearchItem[]> = new Map();
