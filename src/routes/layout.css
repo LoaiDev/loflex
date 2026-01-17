@@ -1,2 +1,17 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+@plugin 'tailwind-scrollbar' {
+	nocompatible: true;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+	--color-primary: var(--color-red-600);
+	--spacing-header: 5rem;
+	--spacing-sidebar: 14rem;
+}
+body {
+	--plyr-color-main: var(--color-primary);
+}
+.bg-bg {
+	@apply bg-white dark:bg-zinc-900;
+}
