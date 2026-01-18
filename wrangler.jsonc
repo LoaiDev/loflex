@@ -3,5 +3,8 @@
 	"name": "loflex",
 	"compatibility_date": "2025-12-27",
 	"compatibility_flags": ["nodejs_als"],
-	"pages_build_output_dir": ".svelte-kit/cloudflare"
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"vars": {
+		"AKWAM_BASE_URL": "https://ak.sv"
+	}
 }
