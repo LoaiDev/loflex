@@ -1,11 +1,9 @@
-import { env } from '$env/dynamic/private';
+import { AKWAM_BASE_URL } from '$env/static/private';
 import type { DirectSource, Movie, SearchItem } from '$lib/models';
 import { error } from '@sveltejs/kit';
 import type { Fetch } from './source';
 import type Source from './source';
 import * as cheerio from 'cheerio';
-
-const AKWAM_BASE_URL = env.AKWAM_BASE_URL;
 
 const movieCache: Map<string, Movie> = new Map();
 const searchCache: Map<string, SearchItem[]> = new Map();
@@ -18,7 +16,6 @@ export class AkwamSource implements Source {
 
 	async search(query: string): Promise<SearchItem[]> {
 		console.log(AKWAM_BASE_URL);
-		console.log(env.AKWAM_BASE_URL);
 		console.log(`${AKWAM_BASE_URL}/search?q=${query}`);
 
 		if (searchCache.has(query)) {
