@@ -20,7 +20,8 @@ export class AkwamSource implements Source {
 		if (searchCache.has(query)) {
 			return searchCache.get(query)!;
 		}
-		const html = await this.fetch(`${AKWAM_BASE_URL}/search?q=${query}`).then((r) => r.text());		
+		const html = await this.fetch(`${AKWAM_BASE_URL}/search?q=${query}`).then((r) => r.text());	
+		console.log(html);
 		const $ = cheerio.load(html);
 		const results = $('.col-lg-auto.col-md-4.col-6.mb-12')
 			.map((_, element) => {
@@ -31,7 +32,8 @@ export class AkwamSource implements Source {
 				const type = idMatch[1] === 'movie' ? 'movie' : 'series';
 				const id = idMatch[2];
 				const name = titleElement.text().trim();
-				const poster = $(element).find('img').attr('data-src') || '';				
+				const poster = $(element).find('img').attr('data-src') || '';
+				console.log(type, id, name, poster);
 				return {
 					type: type,
 					item: {
