@@ -17,6 +17,10 @@ export class AkwamSource implements Source {
 	}
 
 	async search(query: string): Promise<SearchItem[]> {
+		console.log(AKWAM_BASE_URL);
+		console.log(env.AKWAM_BASE_URL);
+		console.log(`${AKWAM_BASE_URL}/search?q=${query}`);
+
 		if (searchCache.has(query)) {
 			return searchCache.get(query)!;
 		}
